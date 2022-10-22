@@ -116,6 +116,7 @@ export default function Home({}: Props) {
                 <motion.li variants={item} className={headerStyle}><Link href="#home">Home</Link> </motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#experience">Experience</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#projects">Projects</Link></motion.li>
+                <motion.li variants={item} className={headerStyle}><Link href="#skills">Skills</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#about">About</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#">Contact</Link></motion.li>
             </motion.ul>

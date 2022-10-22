@@ -10,24 +10,28 @@ import { NextPageWithLayout } from './_app'
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import Experience from '../components/Experience'
 import Projects from '../components/Proejcts'
-import { useParallax } from '../hooks/useParallax'
 import About from '../components/About'
+import Pagination from '../components/Pagination'
+import SkillsSection from '../components/SkillsSection'
 
 const Page: NextPageWithLayout = () => {
 
     return (
-      <motion.div className='flex flex-col justify-center items-center shadow-2xl'>
+      <motion.div className='flex flex-col justify-center items-center shadow-2xl snap-y snap-mandatory  z-0'>
 
-        <section id='home' className='font-bold uppercase tracking-widest '>
+        <section id='home' className='font-bold uppercase tracking-widest snap-start'>
           <Home />
         </section>
-        <section id='experience' className='font-bold uppercase tracking-widest'>
+        <section id='experience' className='font-bold uppercase tracking-widest  snap-start'>
           <Experience />
         </section>
-        <section id="projects" className='font-bold uppercase tracking-widest'>
+        {/* <section id="projects" className='font-bold uppercase tracking-widest snap-start'>
           <Projects />
+        </section> */}
+        <section id="skills">
+          <SkillsSection />
         </section>
-        <section id='about' className='font-bold uppercase tracking-widest'>
+        <section id='about' className='font-bold uppercase tracking-widest snap-start'>
           <About />
         </section>
 
