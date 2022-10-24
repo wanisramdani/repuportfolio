@@ -3,14 +3,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 type Props = {
     text: string
+    bgColor?: string
     children: React.ReactNode
 }
 
-function Tooltip({text, children}: Props) {
+function Tooltip({bgColor, text, children}: Props) {
     const [isHovered, setIsHovered] = React.useState(false)
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center  drop-shadow-lg'>
         {isHovered && (
             <AnimatePresence>
                 <motion.div
@@ -39,8 +40,8 @@ function Tooltip({text, children}: Props) {
                 >
                     
                     <p className="absolute  ">
-                        <div className='bg-secondary rounded-lg py-2 px-6 w-max tracking-widest font-semibold'>{text}</div>
-                        <div className="bg-secondary translate-x-1 -translate-y-3 w-4 h-4 rotate-45 "></div>
+                        <div className={`${bgColor} drop-shadow-md rounded-lg py-2 px-6 w-max tracking-widest font-semibold shadow-md`}>{text}</div>
+                        <div className={`${bgColor} drop-shadow-md translate-x-1 -translate-y-3 w-4 h-4 rotate-45 shadow-md`}></div>
                     </p> 
                 </motion.div>
             </AnimatePresence>
@@ -54,6 +55,10 @@ function Tooltip({text, children}: Props) {
        </div>
     </div>
   )
+}
+
+Tooltip.defaultProps = {
+    bgColor: 'bg-secondary',
 }
 
 export default Tooltip

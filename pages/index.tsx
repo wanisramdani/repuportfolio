@@ -17,7 +17,7 @@ import SkillsSection from '../components/SkillsSection'
 const Page: NextPageWithLayout = () => {
 
     return (
-      <motion.div className='flex flex-col justify-center items-center shadow-2xl snap-y snap-mandatory  z-0'>
+      <motion.div className='flex flex-col justify-center items-center md:shadow-2xl snap-y snap-mandatory  z-0'>
 
         <section id='home' className='font-bold uppercase tracking-widest snap-start'>
           <Home />
@@ -25,9 +25,9 @@ const Page: NextPageWithLayout = () => {
         <section id='experience' className='font-bold uppercase tracking-widest  snap-start'>
           <Experience />
         </section>
-        {/* <section id="projects" className='font-bold uppercase tracking-widest snap-start'>
+        <section id="projects" className='font-bold uppercase tracking-widest snap-start'>
           <Projects />
-        </section> */}
+        </section> 
         <section id="skills">
           <SkillsSection />
         </section>

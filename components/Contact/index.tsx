@@ -2,7 +2,6 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiOutlineMail } from 'react-icons/hi';
 import ContactModal from './ContactModal';
-import Modal from '../Modal';
 import { Dialog } from '@headlessui/react';
 
 type Props = {}
@@ -15,18 +14,19 @@ function Contact({}: Props) {
 
   return (
     <div>
-        <motion.div className='absolute bottom-10 right-48'
+        {/*absolute bottom-10 right-48*/}
+        <motion.div className='absolute right-10 md:right-[480px] bottom-10  '
             initial="hidden" animate="show"
             variants={{
                 hidden:{
                     opacity: 0,
-                    y: 50,
-
+                    y: 100,
+                    x:0,
                 },
                 show:{
                     opacity: 1,
-                    x: 0,
                     y: 0,
+                    x: 0,
                     transition: {
                         duration: 1,
                         delay: 0.5,
@@ -34,24 +34,27 @@ function Contact({}: Props) {
                     }
                 }
             }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.8 }}
+            
         >
-                <div className=''>
+
+
                     {/* icon  */}
                     <motion.div
                         whileHover={{
                             scale: [null, 1.3, 1.2],
                         }}
-                        className='hover:bg-gray-200 hover:text-black w-12 h-12 rounded-full border-2 shadow-xl drop-shadow-log flex justify-center items-center cursor-pointer' 
+                        className=' hover:bg-gray-200 hover:text-black w-12 h-12 rounded-lg  border-2 shadow-3xl drop-shadow-lg flex justify-center items-center cursor-pointer' 
                         onClick={ ()=> ( openModal() ) }
                     >
-                        <HiOutlineMail size={24}/>
+
+                        <HiOutlineMail size={24} className="hover:text-black"/>
                     </motion.div> 
-                    {/* modal */}
                     {/* text:contact me */}
-                </div>
+
         </motion.div>
         
+        {/* modal */}
         <ContactModal isOpen={isOpen} closeModal={closeModal} />   
     
     </div>

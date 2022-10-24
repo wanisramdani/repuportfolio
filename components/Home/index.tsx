@@ -111,8 +111,8 @@ export default function Home({}: Props) {
             </motion.div>
         </div>
         {/* Headers */}
-        <div>
-            <motion.ul initial="hidden" animate="show" variants={list}  className='flex text-tertiary gap-4 justify-center items-center cursor-pointer '>
+        <div className=''>
+            <motion.ul initial="hidden" animate="show" variants={list}  className='grid justify-items-center md:flex text-tertiary gap-4 md:justify-center md:items-center cursor-pointer  '>
                 <motion.li variants={item} className={headerStyle}><Link href="#home">Home</Link> </motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#experience">Experience</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#projects">Projects</Link></motion.li>
