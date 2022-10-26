@@ -4,7 +4,7 @@ import { FaReact } from 'react-icons/fa';
 import Link from 'next/link';
 import axios from 'axios';
 import Image from 'next/image';
-
+import useSWR from 'swr'
 
 interface Props {
     githubLink: string;
@@ -14,33 +14,36 @@ interface Props {
     children?: React.ReactNode;
 }
 
-
 function ProjectCard( {githubLink, productionLink, title, description, children}: Props) {
-    const [ imagePreview, setImagePreview ] = React.useState("");
-
-    const handleImagePreview = async (url:any) => {
+    const [ imagePreview, setImagePreview ] = React.useState<string>("");
+  
+    const handleImagePreview = async (url: string, imageUrl: string) => {
         let {
             data: { image },
-        } = await axios.get("/api/preview", {
-            params: { url },
+        } = await axios.get(url, {
+            params: { imageUrl },
         })
-        setImagePreview(image);
     }
+    
+       /* React.useEffect( () => {
+            handleImagePreview(productionLink)
+        }, [] )*/
+    
+    const { data, error } = useSWR(['/api/preview', productionLink], handleImagePreview)
 
-    React.useEffect( () => {
-        handleImagePreview(productionLink)
-    }, [] )
+    if (data) setImagePreview(data);
+    console.log(data)
 
     return (
         <a href={githubLink}>
             <div className='py-1 h-content w-72 bg-secondary opacity-50 hover:opacity-100 shadow-xl drop-shadow-md'>
                 <div className='h-1/2 flex justify-center items-center shadow-xl drop-shadow-md '>
-                    <Image width="280" height="150" className='object-cover object-top' src={`data:image/jpeg;base64, ${imagePreview}`} alt="project preview" />
+                    <Image width="280" height="150" className='object-cover object-top' src={imagePreview ? `data:image/jpeg;base64, ${imagePreview}`: "/images/404image.png"} alt="project preview" />
                 </div>
                 <div className='mt-2 ml-4 flex flex-col gap-5'>
                     <div className='flex justify-center text-gray-200'>{title}</div>
                     <div className='normal-case font-normal text-tertiary mb-1'>{description}</div>
-                    <div className='flex justify-center items-center gap-4 text-gray-200 mb-3'>
+                    <div className='text-gray-200 mb-3'>
                         {children}              
                     </div>
                 </div>

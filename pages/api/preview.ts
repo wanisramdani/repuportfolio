@@ -22,32 +22,34 @@ export default async function handler(
 
     } catch (error) {
         res.status(500).json({ 
-            error,
+            error: JSON.stringify(error),
          })
     }
     
 }
 
 let getImageBase64 = async (url :any) => {
+    let cachedImage = await getCachedImage(url);
+    if (cachedImage) return cachedImage;
+  
     let browser = await puppeteer.launch();
     let page = await browser.newPage();
     await page.goto(url);
     let image = await page.screenshot({ encoding: "base64" });
     await browser.close();
+  
+    await cacheImage(url, image);
+  
     return image;
 }
 
 let getCachedImage = async (url :any) => { 
-    let { image } = await prisma.image.findUnique({ 
+    let projectImagePreview  = await prisma.projectImagePreview.findUnique({ 
         where: { url },
      })
-     return image;
+     return projectImagePreview?.image;
 }
 
-let cacheImage =async (url: any, image:any) => {
-    await prisma.image.create({
-        data: {
-            url, image
-        }
-    })
-}
+let cacheImage = async (url:any, image:any) => {
+    await prisma.projectImagePreview.create({ data: { url, image } });
+};
