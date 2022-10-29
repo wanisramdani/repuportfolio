@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { HiOutlineMail } from 'react-icons/hi';
 import ContactModal from './ContactModal';
 import { Dialog } from '@headlessui/react';
+import SuccessfulModal from '../Modal/SuccessfulModal';
 
 type Props = {}
 
@@ -55,8 +56,9 @@ function Contact({}: Props) {
         </motion.div>
         
         {/* modal */}
-        <ContactModal isOpen={isOpen} closeModal={closeModal} />   
-    
+        <ContactModal isOpen={isOpen} closeModal={closeModal} /> 
+
+
     </div>
   )
 }

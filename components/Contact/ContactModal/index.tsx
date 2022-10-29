@@ -2,15 +2,67 @@ import { Dialog } from '@headlessui/react'
 import { Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 import { motion } from 'framer-motion'
+import axios from 'axios'
+import { CgSpinnerTwoAlt } from "react-icons/cg"
+import SuccessfulModal from '../../Modal/SuccessfulModal'
 
 type Props = {
   isOpen: boolean,
   closeModal: () => void
 }
 
+
 function ContactModal({ isOpen, closeModal }: Props) {
+    const [ email, setEmail ] = React.useState('')
+    const [ subject, setSubject ] = React.useState('')
+    const [ message, setMessage ] = React.useState('')
+    const [ isSuccessful, setIsSuccessful ] = React.useState(false)
+    const [ succModal, setsuccModal ] = React.useState(false)
+    const [ loading, setLoading ] = React.useState(false)
+
+    const closeSuccModal = () => { setsuccModal(false) }
+    const openSuccModal = () => { setsuccModal(true) }
+
+    const openSuccessfulModal = () => {
+      setIsSuccessful(true)
+      openSuccModal()
+    }
+
+    const openFailureModal = () => {
+      setIsSuccessful(false)
+      openSuccModal()
+    }
+    const Loading = () => (
+      <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50'>
+            <div className='flex justify-center items-center h-full'>
+              <CgSpinnerTwoAlt className='animate-spin' size={80} />
+            </div>
+        </div>
+    )
+
+    const form = React.useRef<HTMLFormElement>(null)
+
+    const handleSubmit = (e:any) => {
+        e.preventDefault()
+        closeModal(),
+        setLoading(true)
+
+        axios.post('/api/email', {
+            email,
+            subject,
+            message
+        }).then( ()=>(
+          setLoading(false),
+          openSuccessfulModal()
+        ) ).catch(err => ( 
+          setLoading(false),
+          openFailureModal()
+        ))
+        
+    }
+
   return (
-    <div>
+    <form ref={form} onSubmit={handleSubmit}>
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
         {/* Background */}
@@ -33,18 +85,27 @@ function ContactModal({ isOpen, closeModal }: Props) {
                 <div className='mt-4'>
 
                   <div className=''>
-                    <p className='normal-case text-gray-300 mb-1'>Email: </p>
-                    <input type="text" placeholder="email@contact.me" className='bg-secondary rounded-md p-2 w-80 h-8 text-gray-300 '/>
+                    <p className='normal-case text-gray-300 mb-1'>Your Email: </p>
+                    <input type="text" placeholder="email@contact.me"         className='bg-secondary rounded-md p-2 w-80 h-8 text-gray-300 '
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
 
                   <div className='mt-2'>
                     <p className='normal-case text-gray-300  mb-1'>Subject: </p>
-                    <input type="text" placeholder="Hire me" className='bg-secondary rounded-md p-2 w-80 h-8 text-gray-300 '/>
+                    <input type="text" placeholder="Hire me" className='bg-secondary rounded-md p-2 w-80 h-8 text-gray-300 '
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    />
                   </div>
                   
                   <div className='mt-2'>
                     <p className='normal-case text-gray-300  mb-1'>Message: </p>
-                    <textarea placeholder="I want to hire you" className='bg-secondary rounded-md p-2 w-80 h-32 text-gray-300 '/>
+                    <textarea placeholder="I want to hire you" className='bg-secondary rounded-md p-2 w-80 h-32 text-gray-300 '
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    />
                   </div>
 
                 </div>
@@ -58,6 +119,8 @@ function ContactModal({ isOpen, closeModal }: Props) {
                 >
                   <button
                     className='border-2 border-secondary hover:bg-secondary text-gray-300 hover:text-gray-400 font-bold w-full h-10 rounded-md tracking-wider'
+                    type='submit'
+                    onClick={handleSubmit}
                   >
                     Submit
                   </button>
@@ -70,9 +133,9 @@ function ContactModal({ isOpen, closeModal }: Props) {
 
       </Dialog>
     </Transition>
-
- 
-    </div>
+    {loading ? <Loading /> : <SuccessfulModal isOpen={succModal} sucessful={true} closeSuccModal={ closeSuccModal } />
+    }
+    </form>
   )
 }
 

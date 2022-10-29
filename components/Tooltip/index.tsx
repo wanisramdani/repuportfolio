@@ -39,10 +39,10 @@ function Tooltip({bgColor, text, children}: Props) {
                     }}
                 >
                     
-                    <p className="absolute  ">
+                    <div className="absolute  ">
                         <div className={`${bgColor} drop-shadow-md rounded-lg py-2 px-6 w-max tracking-widest font-semibold shadow-md`}>{text}</div>
                         <div className={`${bgColor} drop-shadow-md translate-x-1 -translate-y-3 w-4 h-4 rotate-45 shadow-md`}></div>
-                    </p> 
+                    </div> 
                 </motion.div>
             </AnimatePresence>
         )}

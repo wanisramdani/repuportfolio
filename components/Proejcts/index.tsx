@@ -1,9 +1,8 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import { TbBrandNextjs } from 'react-icons/tb'
-import { SiTypescript } from 'react-icons/si'
-import Tooltip from '../Tooltip'
+
 import useSWR from 'swr'
 import TechStack from './TechStack'
 
@@ -20,11 +19,28 @@ const Projects = (props: Props) => {
     if (!data) return <div>Loading...</div>;
     
     return (
-      <div className='flex flex-col justify-center items-center gap-24'>
+      <motion.div className='flex flex-col justify-center items-center gap-24'
+        initial="hidden" animate="show"
+        variants={{
+          hidden: {
+            opacity: 0,
+            scale: 0
+          },
+          show: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+              delay: 0.1,
+              duration: 0.1,
+              ease: "easeInOut"
+            }
+          }
+        }}
+      >
           <p className='text-3xl tracking-widest font-extrabold'>Projects</p>
 
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 content-center	 md:flex md:flex-cols gap-12 md:gap-8 md:w-1/2  p-12  overflow-y-scroll  md:overflow-x-scroll md:overflow-y-hidden '> 
+        <div className='grid grid-cols-1 sm:grid-cols-2 content-center	 md:flex md:flex-cols gap-12 md:gap-8 md:w-1/2  p-12  overflow-y-scroll  md:overflow-x-scroll md:overflow-y-hidden'> 
 
           {Object.entries(data).map( (project:any) => (
             <ProjectCard 
@@ -39,7 +55,7 @@ const Projects = (props: Props) => {
 
           ) ) }
         </div> 
-      </div>
+      </motion.div>
     )
 }
 

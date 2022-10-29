@@ -8,16 +8,16 @@ type Props = {
 }
 
 const TECHSTACK_ICONS = {
-    'Next': <TbBrandNextjs size={30} />,
-    'TypeScript': <SiTypescript size={30} />,
-    'React': <FaReact size={30} />,
-    'Django': <SiDjango size={30} />,
-    'Python': <FaPython size={30} />,
-    'Spring': <SiSpring size={30} />,
-    'Java': <FaJava size={30} />,
-    'JavaScript': <SiJavascript size={30} />,
-    'PostgreSQL': <SiPostgresql size={30} />,
-    'Nodejs': <FaNode size={30} />
+    'Next': <TbBrandNextjs size={30} key={0} />,
+    'TypeScript': <SiTypescript size={30} key={1} />,
+    'React': <FaReact size={30} key={2} />,
+    'Django': <SiDjango size={30} key={3} />,
+    'Python': <FaPython size={30} key={4} />,
+    'Spring': <SiSpring size={30} key={5} />,
+    'Java': <FaJava size={30} key={6} />,
+    'JavaScript': <SiJavascript size={30} key={7} />,
+    'PostgreSQL': <SiPostgresql size={30} key={8} />,
+    'Nodejs': <FaNode size={30} key={9} />
 }
 
 type T = keyof typeof TECHSTACK_ICONS
@@ -27,10 +27,6 @@ function TechStack({data}: Props) {
     
     Object.entries(data).map( (tech:any) => (
         tech[1].map((x:T) => (icons.push( TECHSTACK_ICONS[x] )))
-    ) )
-
-    icons.map( (icon:any , i: any) => (
-        console.log(i)
     ) )
 
     return (

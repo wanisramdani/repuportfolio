@@ -8,7 +8,7 @@ type Props = {
 
 function Layout({children}: Props) {
   return (
-    <div className='text-white container mx-auto h-screen w-mins  overflow-x-hidden '>
+    <div className='text-white container mx-auto h-screen w-mins   '>
       <Header className='flex justify-between items-center px-20 mt-10 '/>
         <div>
           {children}
