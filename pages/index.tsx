@@ -1,21 +1,17 @@
-import type { NextPage } from 'next'
 import React from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
 import { ReactElement } from 'react'
 import Home from '../components/Home'
 import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
-import { NextPageWithLayout } from './_app'
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 
-const Experience = dynamic(() => import('../components/Experience'), { ssr: false });
-const Projects = dynamic(() => import('../components/Proejcts'), { ssr: false });
-const About = dynamic(() => import('../components/About'), { ssr: false });
-const SkillsSection = dynamic(() => import('../components/SkillsSection'), { ssr: false });
+import { NextPageWithLayout } from './_app'
+import { motion } from 'framer-motion'
+
+import Experience from '../components/Experience'
+import Projects from '../components/Projects'
+import SkillsSection from '../components/SkillsSection'
+import About from '../components/About'
 
 import useOnScreen from '../hooks/useOnScreen'
-import dynamic from 'next/dynamic'
 
 const Page: NextPageWithLayout = () => {
     const experienceRef = React.useRef(null);
@@ -31,34 +27,32 @@ const Page: NextPageWithLayout = () => {
     const projectsRefOnScreen = useOnScreen( {ref: projectsRef} );
     const aboutRefOnScreen = useOnScreen( {ref: aboutRef} );
     const skillsRefOnScreen = useOnScreen( {ref: skillsRef} );
-
     
-    
-   {/* React.useEffect( ()=>{
+   React.useEffect( ()=>{
       if(!isExperienceVisible) setIsExperienceVisible(experienceRefOnScreen);
       if(!isProjectsVisible) setIsProjectsVisible(projectsRefOnScreen);
       if(!isAboutVisible) setIsAboutVisible(aboutRefOnScreen);
       if(!isSkillsVisible) setIsSkillsVisible(skillsRefOnScreen);
-    }, [experienceRefOnScreen, projectsRefOnScreen, aboutRefOnScreen, skillsRefOnScreen] )
-  */}
+    }, [experienceRefOnScreen, projectsRefOnScreen, aboutRefOnScreen, skillsRefOnScreen, isExperienceVisible, isProjectsVisible, isAboutVisible, isSkillsVisible] )
+  
 
     return (
-      <motion.div className='flex flex-col justify-center items-center md:shadow-2xl snap-mandatory snap-y z-0 font-bold uppercase tracking-widest'>
+      <motion.div className='flex flex-col justify-center items-center snap-mandatory snap-y z-0 font-bold uppercase tracking-widest'>
 
-        <section id='home'>
+        <section id='home' className='snap-center'>
           <Home />
         </section>
-        <section id='experience' ref={experienceRef}>
+        <section id='experience' className='snap-center' ref={experienceRef}>
           {experienceRefOnScreen && <Experience />}
         </section>
 
-        <section id="projects" ref={projectsRef}>
+        <section id="projects" className='snap-center' ref={projectsRef}>
           {projectsRefOnScreen && <Projects />}
         </section> 
-        <section id="skills" ref={skillsRef}>
+        <section id="skills" className='snap-center' ref={skillsRef}>
           {skillsRefOnScreen && <SkillsSection />}
         </section>
-        <section id='about' ref={aboutRef}>
+        <section id='about' className='snap-center' ref={aboutRef}>
           {aboutRefOnScreen && <About />}
         </section>
 

@@ -9,137 +9,59 @@
             "Frontend": [
                 "Next",
                 "TypeScript"
-            ],
-            "Backend": [
-                "Node"
             ]
         }
     },
     {
         "id": "2",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
+        "title": "Task management",
+        "description": "Task management site",
+        "githubLink": "https://github.com/wanisramdani/taskmanagement",
+        "productionLink": "https://github.com/wanisramdani/taskmanagement",
         "techStack": {
             "Frontend": [
-                "Next",
-                "TypeScript"
+                "Django Template",
+                "Javascript"
             ],
             "Backend": [
-                "Node"
+                "Django",
+                "PostgreSQL",
+                "Python"
             ]
         }
     },
     {
         "id": "3",
-        "title": "Rock paper scissors",
+        "title": "El Sahihine",
         "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
+        "githubLink": "https://github.com/wanisramdani/bookworm",
+        "productionLink": "https://github.com/wanisramdani/bookworm",
         "techStack": {
             "Frontend": [
-                "Next",
-                "TypeScript"
+                "React",
+                "MUI",
+                "Javascript"
             ],
             "Backend": [
-                "Node"
+                "Django",
+                "PostgreSQL",
+                "Python"
             ]
         }
     },
     {
         "id": "4",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
+        "title": "Overclock-estore",
+        "description": "Ecommerce site for selling computer parts",
+        "githubLink": "https://github.com/wanisramdani/overclock-estore",
+        "productionLink": "https://github.com/wanisramdani/overclock-estore",
         "techStack": {
             "Frontend": [
-                "Next",
-                "TypeScript"
+                "Thymeleaf"
             ],
             "Backend": [
-                "Node"
-            ]
-        }
-    },
-    {
-        "id": "5",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
-        "techStack": {
-            "Frontend": [
-                "Next",
-                "TypeScript"
-            ],
-            "Backend": [
-                "Node"
-            ]
-        }
-    },
-    {
-        "id": "6",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
-        "techStack": {
-            "Frontend": [
-                "Next",
-                "TypeScript"
-            ],
-            "Backend": [
-                "Node"
-            ]
-        }
-    },
-    {
-        "id": "7",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
-        "techStack": {
-            "Frontend": [
-                "Next",
-                "TypeScript"
-            ],
-            "Backend": [
-                "Node"
-            ]
-        }
-    },
-    {
-        "id": "8",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
-        "techStack": {
-            "Frontend": [
-                "Next",
-                "TypeScript"
-            ],
-            "Backend": [
-                "Node"
-            ]
-        }
-    },
-    {
-        "id": "9",
-        "title": "Rock paper scissors",
-        "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
-        "techStack": {
-            "Frontend": [
-                "Next",
-                "TypeScript"
-            ],
-            "Backend": [
-                "Node"
+                "Spring",
+                "MySQL"
             ]
         }
     }

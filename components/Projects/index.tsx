@@ -40,15 +40,15 @@ const Projects = (props: Props) => {
           <p className='text-3xl tracking-widest font-extrabold'>Projects</p>
 
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 content-center	 md:flex md:flex-cols gap-12 md:gap-8 md:w-1/2  p-12  overflow-y-scroll  md:overflow-x-scroll md:overflow-y-hidden'> 
+        <div className='grid grid-cols-1 sm:grid-cols-2 content-center w-80 md:flex md:flex-cols gap-12 md:gap-8 md:w-[960px]  p-12  overflow-y-scroll  md:overflow-x-scroll md:overflow-y-hidden'> 
 
           {Object.entries(data).map( (project:any) => (
             <ProjectCard 
               key={project[1].id}
               title={project[1].title}
               description={project[1].description}
-              githubLink='https://github.com/wanisramdani/rockpaperscissors'
-              productionLink='https://rockpaperscissors-rho.vercel.app/'
+              githubLink={project[1].githubLink}
+              productionLink={project[1].productionLink}
             >
               <TechStack data={project[1].techStack} /> 
             </ProjectCard>

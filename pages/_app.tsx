@@ -2,9 +2,6 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import type { NextPage } from 'next'
 import type { ReactElement, ReactNode } from 'react'
-import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
-import { Loading } from '../components/Loading/Loading'
 import { AnimatePresence, motion } from 'framer-motion'
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode

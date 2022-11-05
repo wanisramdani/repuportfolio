@@ -1,7 +1,8 @@
 import React from 'react'
 import { FaReact, FaPython, FaJava, FaNode } from 'react-icons/fa'
-import { SiDjango, SiSpring, SiTypescript, SiJavascript, SiPostgresql } from 'react-icons/si'
+import { SiDjango, SiSpring, SiTypescript, SiJavascript, SiPostgresql, SiThymeleaf } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
+import { DiMysql } from 'react-icons/di'
 
 type Props = {
     data?: any
@@ -17,6 +18,8 @@ const TECHSTACK_ICONS = {
     'Java': <FaJava size={30} key={6} />,
     'JavaScript': <SiJavascript size={30} key={7} />,
     'PostgreSQL': <SiPostgresql size={30} key={8} />,
+    'MySQL': <DiMysql size={30} key={9} />,
+    'Thymeleaf': <SiThymeleaf size={30} key={10} />,
     'Nodejs': <FaNode size={30} key={9} />
 }
 

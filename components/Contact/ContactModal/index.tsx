@@ -131,9 +131,9 @@ function ContactModal({ isOpen, closeModal }: Props) {
           </div>
         </div>
 
-      </Dialog>
+      </Dialog> 
     </Transition>
-    {loading ? <Loading /> : <SuccessfulModal isOpen={succModal} sucessful={true} closeSuccModal={ closeSuccModal } />
+    {loading ? <Loading /> : <SuccessfulModal isOpen={succModal} sucessful={true}         closeSuccModal={ closeSuccModal } />
     }
     </form>
   )

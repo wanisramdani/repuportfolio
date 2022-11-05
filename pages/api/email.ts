@@ -2,21 +2,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { SMTPClient } from 'emailjs'
 
-interface SMTPopetions{
-    user?: string,
-    password?: string,
-    host?: string,
-    to?: string,
-    ssl: boolean
-    port: number
-}
-
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
 
-     const { EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO, EMAIL_HOST } = process.env
+    const { EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO, EMAIL_HOST } = process.env
     
     const client = new SMTPClient({
         user: EMAIL_USER,

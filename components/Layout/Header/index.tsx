@@ -12,7 +12,7 @@ function Header({className}: Props) {
     <div className={className}>
       <div className='flex gap-3 '>
         <div> <a href="https://github.com/wanisramdani"> <FaGithubAlt className='w-8 h-5' /> </a> </div>
-        <div> <a href="#"> <FaLinkedinIn className='w-8 h-5' /> </a> </div>
+        <div> <a href="https://www.linkedin.com/in/abdelwanis-ramdani-51b19119b/"> <FaLinkedinIn className='w-8 h-5' /> </a> </div>
       </div>
       <motion.a className='cursor-pointer px-4 h-12 flex gap-2 justify-center items-center rounded-xl border border-white hover:bg-white hover:text-black hover:shadow-lg hover:shadow-'
         whileHover={{ scale: 1.1 }}

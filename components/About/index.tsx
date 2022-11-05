@@ -25,13 +25,16 @@ function About({}: Props) {
     >
         {/*pic*/}
         <div >
-            <Image className='shadow-lg drop-shadow-lg rounded-2xl' alt='Profile picture relative' src={"/images/pf.jpg"} width={300} height={300} />
+            <Image className='border-2 border-gray-400 shadow-lg drop-shadow-lg rounded-2xl' alt='Profile picture relative' src={"/images/pf.jpg"} width={300} height={300} 
+            blurDataURL="/images/3x3_placeholder.png"
+            onError={(e) => { e.currentTarget.src = "/images/3x3_placeholder.png" }}
+            priority/>
         </div>
         {/*info*/}
         <div className='border-secondary p-4 w-1/2 md:w-1/3 normal-case  rounded-md'>
             <div className='text-2xl font-bold text-left mb-5'>About Me</div>
             <div>
-                <p className='text-md text-gray-400'>I'm a software engineer graduate with a passion for building web applications. I have experience working with React, Next.js, Spring and Django. I am also familiar with Python, Java, javascript and typescript. I am currently looking for a full-time entry level software engineering position.</p>
+                <p className='text-md text-gray-400'>{"Im a software engineer graduate with a passion for building web applications. I have experience working with React, Next.js, Spring and Django. I am also familiar with Python, Java, javascript and typescript. I am currently looking for a full-time entry level software engineering position."}</p>
             </div>
         </div>
     </motion.div>

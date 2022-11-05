@@ -1,10 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from "puppeteer";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient()
-
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -31,8 +27,4 @@ let getImageBase64 = async (url:any) => {
     let image = await page.screenshot({ encoding: "base64" });
     await browser.close();
     return image;
-};
-
-let cacheImage = async (url:any, image:any) => {
-    await prisma.projectImagePreview.create({ data: { url, image } });
 };

@@ -35,19 +35,7 @@ export default function Home({}: Props) {
             duration: 0.8,
           },
         },
-      };
-      const textAnimation = {
-        hidden: {
-          y: "200%",
-          color: "#a9a9a9", //gray
-          transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 }
-        },
-        show: {
-          y: 0,
-          color: "#ffffff", //white
-          transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.75 }
-        }
-      }
+      };     
 
   return (
     <div className='mb-24'>
@@ -76,7 +64,7 @@ export default function Home({}: Props) {
             }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-            <Image className='w-8 h-8 rounded-full ' alt="Portfolio Picture" src='/images/pf.jpg' width={150} height={150}  />
+            <Image className='w-8 h-8 rounded-full ' alt="Portfolio Picture" src={"/images/pf.jpg"} width={150} height={150}  />
         </motion.div>
         {/* NAME */}
         <div className='text-center'>
@@ -105,7 +93,7 @@ export default function Home({}: Props) {
             {/* NAME */}
             <motion.div  className='text-5xl m-5'>
               <AnimateCharacters>
-                 Repu Rupester
+                 Wanis Ramdani
               </AnimateCharacters>
              
             </motion.div>
@@ -118,7 +106,6 @@ export default function Home({}: Props) {
                 <motion.li variants={item} className={headerStyle}><Link href="#projects">Projects</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#skills">Skills</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#about">About</Link></motion.li>
-                <motion.li variants={item} className={headerStyle}><Link href="#">Contact</Link></motion.li>
             </motion.ul>
         </div>
         {/* Contact me*/}
