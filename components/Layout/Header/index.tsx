@@ -18,7 +18,7 @@ function Header({className}: Props) {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        href='/files/WanisRamdaniResume.pdf' download
+        href='https://bucwqkekwhobsbfywkya.supabase.co/storage/v1/object/public/resume/WanisRamdani_Resume.pdf?t=2022-11-05T09:27:02.129Z&download' download
       >
        <FaDownload /> Download Resume
       </motion.a>
