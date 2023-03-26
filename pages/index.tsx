@@ -1,5 +1,7 @@
 import React from 'react'
 import { ReactElement } from 'react'
+import Head from 'next/head'
+
 import Home from '../components/Home'
 import Layout from '../components/Layout'
 
@@ -38,11 +40,14 @@ const Page: NextPageWithLayout = () => {
 
     return (
       <motion.div className='flex flex-col justify-center items-center snap-mandatory snap-y z-0 font-bold uppercase tracking-widest'>
+        <Head>
+          <title>Wanis portfolio</title>
+        </Head>
 
         <section id='home' className='snap-center'>
           <Home />
         </section>
-        
+
         <section id='about' className='snap-center' ref={aboutRef}>
           {aboutRefOnScreen && <About />}
         </section>

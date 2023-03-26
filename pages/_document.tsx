@@ -3,9 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   return (
     <Html>
-      <Head>
-        <title>Wanis's portfolio</title>
-      </Head>
+      <Head></Head>
       <body 
         className='
         bg-primary 
