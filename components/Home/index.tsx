@@ -8,7 +8,7 @@ import Contact from '../Contact';
 type Props = {}
 
 export default function Home({}: Props) {
-    const headerStyle:string = 'px-20 flex justify-center items-center w-24 h-10 hover:border-2 hover:rounded-full hover:border-white hover:text-white';
+    const headerStyle:string = 'px-20 flex justify-center items-center w-24 h-10 border-2 border-transparent rounded-full hover:border-white hover:text-white';
     const list = { 
         show: {
             transition: {
@@ -102,14 +102,13 @@ export default function Home({}: Props) {
         <div className=''>
             <motion.ul initial="hidden" animate="show" variants={list}  className='grid justify-items-center md:flex text-tertiary gap-4 md:justify-center md:items-center cursor-pointer  '>
                 <motion.li variants={item} className={headerStyle}><Link href="#home">Home</Link> </motion.li>
+                <motion.li variants={item} className={headerStyle}><Link href="#about">About</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#experience">Experience</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#projects">Projects</Link></motion.li>
                 <motion.li variants={item} className={headerStyle}><Link href="#skills">Skills</Link></motion.li>
-                <motion.li variants={item} className={headerStyle}><Link href="#about">About</Link></motion.li>
             </motion.ul>
         </div>
-        {/* Contact me*/}
-        <Contact />
+       
 
 
     </div>

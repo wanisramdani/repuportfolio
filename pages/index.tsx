@@ -42,6 +42,11 @@ const Page: NextPageWithLayout = () => {
         <section id='home' className='snap-center'>
           <Home />
         </section>
+        
+        <section id='about' className='snap-center' ref={aboutRef}>
+          {aboutRefOnScreen && <About />}
+        </section>
+
         <section id='experience' className='snap-center' ref={experienceRef}>
           {experienceRefOnScreen && <Experience />}
         </section>
@@ -52,9 +57,7 @@ const Page: NextPageWithLayout = () => {
         <section id="skills" className='snap-center' ref={skillsRef}>
           {skillsRefOnScreen && <SkillsSection />}
         </section>
-        <section id='about' className='snap-center' ref={aboutRef}>
-          {aboutRefOnScreen && <About />}
-        </section>
+
 
       </motion.div>
     )

@@ -12,12 +12,12 @@ function Contact({}: Props) {
 
   return (
     <div>
-        <motion.div className='absolute right-10 md:right-[480px] bottom-10  '
+        <motion.div className=''
             initial="hidden" animate="show"
             variants={{
                 hidden:{
                     opacity: 0,
-                    y: 100,
+                    y: -100,
                     x:0,
                 },
                 show:{
