@@ -36,7 +36,7 @@ function Header({className}: Props) {
            }}
           whileHover={{ scale: 1.1 }}
 
-          href='https://bucwqkekwhobsbfywkya.supabase.co/storage/v1/object/public/resume/WanisRamdani_CV.pdf?t=2023-02-21T21:09:59.796Z&download' download
+          href='https://bucwqkekwhobsbfywkya.supabase.co/storage/v1/object/public/resume/WanisRamdani_resume.pdf?download' download
         >
         <FaDownload /> Download Resume
         </motion.a>
