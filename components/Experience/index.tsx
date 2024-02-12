@@ -27,9 +27,15 @@ function Experience({}: Props) {
 
       <div className='flex flex-row gap-12 overflow-x-scroll w-full p-20 space-x-10 snap-x snap-mandatory' >
         
-          <ExCard jobPosition='Intern' companyName='ARTEC-INT' dateStart='August-06-21' dateEnd='July-28-21' >
+          <ExCard jobPosition='Intern' companyName='ARTEC-INT' dateStart='August-21' dateEnd='July-21' >
             <ItemExCard jobDescription='Built task management with Django' />
             <ItemExCard jobDescription='Built article posting site' />
+          </ExCard>
+
+          <ExCard jobPosition='Full-Stack Web developer' companyName='Flambosoft' dateStart='August-23' dateEnd='November-23' >
+          </ExCard>
+
+          <ExCard jobPosition='Odoo Developer' companyName='Weasydoo' dateStart='November-23' dateEnd='Current' >
           </ExCard>
 
       </div>

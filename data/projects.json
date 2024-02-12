@@ -3,8 +3,8 @@
         "id": "1",
         "title": "Rock paper scissors",
         "description": "Rock paper scissors game built with nextjs and typescript",
-        "githubLink": "https://github.com/wanisramdani/rockpaperscissors",
-        "productionLink": "https://rockpaperscissors-rho.vercel.app/",
+        "githubLink": "https://rockpaperscissors-rho.vercel.app/",
+        "productionLink": "https://github.com/wanisramdani/rockpaperscissors",
         "techStack": {
             "Frontend": [
                 "Next",

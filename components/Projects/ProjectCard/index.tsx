@@ -20,7 +20,7 @@ function ProjectCard( {githubLink, productionLink, title, description, children}
     let handleFetchImageOLD = async (url?:string) => {
         let {
           data: { image },
-        } = await axios.get("http://localhost:3000/api/preview", {
+        } = await axios.get("/api/preview", {
           params: { url },
         });
         setImagePreview("data:image/jpeg;base64, " + image);
